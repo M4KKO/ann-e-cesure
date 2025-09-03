@@ -3,7 +3,7 @@ for i in {1..2}
 do
 	echo "je teste le fichier:  fichier$i.txt"
 	if [ -f "fichier$i.txt" ]; then
-		mv "fichier$i.txt" "fichier${i}_old.txt"
+		mv "fichier$i.txt" "fichier${i}_old.txt" #si le fichier existe on le renomme en lui ajoutant old 
 	else
 		echo "Le fichier$i n'existe pas"
 	fi
