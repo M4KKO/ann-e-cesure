@@ -16,6 +16,9 @@
 - `grep "mot" fichier` : chercher un mot/ensemble de mots dans un fichier
    - `-i` : ignore la casse (supprime les majuscules)
 - `wc -l` : compte le nombre de lignes
+- `if [ $var =...]` : compare avec une chaine de caractère
+- `if [ $var -eq ...]` : compare avec un nombre
+- `var=${var,,}` : met une chaîne de caractère en minuscule
 
 # Notes Git - Phase 1
 - `git status` : voir l’état des fichiers (modifiés, suivis, à commit)

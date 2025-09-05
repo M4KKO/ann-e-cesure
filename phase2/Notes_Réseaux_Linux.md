@@ -17,3 +17,12 @@
 - `ss -tln` : scan de port TCP ouvert 
    - `-uln` : scan de port UDP ouvert 
    - `-tulnp` : scan TCP+UDP + programmes associés 
+
+##Processus
+- `ps aux` : liste les processus en cours
+- `grep <nom>` : filtre un processus par nom
+- `kill <PID>` : arrêter un processus proprement (SIGTERM) (-15 implicite)
+- `kill -9 <PID>` : forcer l’arrêt (SIGKILL)
+- `pkill <nom>` : arrêter par nom de processus
+- `pgrep <nom>` : trouver le PID d’un processus
+- `grep -v grep` : supprime le grep de la liste des processus 
