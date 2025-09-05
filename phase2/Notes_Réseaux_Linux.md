@@ -14,3 +14,6 @@
 ## Bash
 - `> /dev/null` masque la sortie standard
 - `2>&1` masque aussi la sortie d’erreur
+- `ss -tln` : scan de port TCP ouvert 
+   - `-uln` : scan de port UDP ouvert 
+   - `-tulnp` : scan TCP+UDP + programmes associés 
