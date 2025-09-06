@@ -19,6 +19,11 @@
 - `if [ $var =...]` : compare avec une chaine de caractère
 - `if [ $var -eq ...]` : compare avec un nombre
 - `var=${var,,}` : met une chaîne de caractère en minuscule
+- `case $variable in`
+   - `valeur1)` commandes ;;
+   - `valeur2|valeur3)` commandes ;;
+   - `*)` commandes ;;
+esac
 
 # Notes Git - Phase 1
 - `git status` : voir l’état des fichiers (modifiés, suivis, à commit)
