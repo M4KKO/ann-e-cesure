@@ -15,7 +15,7 @@
 - Appel :
   `ma_fonction argument`
 
-##Log & Redirection
+## Log & Redirection
 - `>` : redirige stdout (sortie normale) vers un fichier (écrase)
 - `>>` : redirige stdout vers un fichier (ajoute)
 - `2>` : redirige stderr (erreurs) vers un fichier (écrase)
@@ -23,3 +23,6 @@
 - `commande > out.log 2> err.log` : sortie et erreurs séparées
 - `commande > tout.log 2>&1` : fusion stdout + stderr dans le même fichier
 - `$(date)` : insérer la date/heure actuelle (utile pour logs)
+
+## Cron
+- Toujours utiliser le chemin absolu si fichier dans un script et pour la commande dans crontab
