@@ -1,5 +1,6 @@
 import sys
 import socket
+import csv
 def scan_port(ip,port):
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     try:
@@ -33,7 +34,12 @@ if len(sys.argv)>3:
     print(f"Nombre de ports testés : {compteur_test}")
     print(f"Il y a {compteur_port_ouvert} port(s) ouvert(s)")
     print(f"Il y a {compteur_port_ferme} port(s) ferme(s)")
-    for msg in resume:
-        print(f"Port {msg['port']} : {msg['msg']}")
+    with open("resultats.csv", "w") as f:
+        writer = csv.writer(f) #création de l'objet écrivain
+        writer.writerow(["port", "message"])
+        for resultat in resume:
+            print(f"Port {resultat['port']} : {resultat['msg']}")
+            writer.writerow([resultat["port"], resultat["msg"]])
 else:
     print("Usage : python3 test_port.py ip (ou localhost) port1 port2 ...")
+
