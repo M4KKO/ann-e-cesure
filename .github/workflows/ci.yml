@@ -1,0 +1,50 @@
+name: Phase5 CI - Audit & Security
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  audit-and-security:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps (project)
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Install security tools
+        run: |
+          pip install bandit pip-audit
+
+      - name: Run audit script
+        working-directory: Securite
+        run: |
+          mkdir -p reports
+          python scripts/audit_systeme.py
+          ls -la reports || true
+
+      - name: Run Bandit (SAST)
+        run: |
+          bandit -r . -f json -o bandit-report.json || true
+
+      - name: Run pip-audit (dependencies)
+        run: |
+          pip-audit --format=json -o pip-audit.json || true
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: audit-and-security-reports
+          path: |
+            Securite/reports/*
+            bandit-report.json
+            pip-audit.json
