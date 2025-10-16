@@ -34,13 +34,14 @@ jobs:
 
       - name: Run Bandit (SAST)
         run: |
-          bandit -r . -f json -o bandit-report.json || true
+          bandit -r . -ll -f json -o bandit-report.json
 
       - name: Run pip-audit (dependencies)
         run: |
-          pip-audit --format=json -o pip-audit.json || true
+          pip-audit --format=json -o pip-audit.json
 
       - name: Upload artifacts
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: audit-and-security-reports
