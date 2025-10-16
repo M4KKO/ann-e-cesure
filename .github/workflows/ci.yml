@@ -38,7 +38,7 @@ jobs:
 
       - name: Run pip-audit (dependencies)
         run: |
-          pip-audit --format=json -o pip-audit.json
+          if [ -f requirements.txt ]; then pip-audit -r requirements.txt --strict --format=json -o pip-audit.json; else echo "no requirements.txt"; fi
 
       - name: Upload artifacts
         if: always()
