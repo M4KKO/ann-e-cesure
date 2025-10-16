@@ -101,4 +101,4 @@ def scan():
     """
 
 if __name__ == "__main__":
-    app.run(debug=True)  # lance le serveur en local (http://127.0.0.1:5000)
+    app.run(debug=False)  # lance le serveur en local (http://127.0.0.1:5000)
