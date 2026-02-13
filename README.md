@@ -26,3 +26,8 @@ python3 Python_reseau/scripts/test_port.py 127.0.0.1 22 80 443
 ### Long terme
 - Mise en place d'une CI/CD
 - Conteneurisation avec Docker
+
+## Statut du projet
+
+Projet en cours d’amélioration continue.  
+L’objectif est de maintenir une progression régulière, même par petites étapes, afin de consolider les bases techniques et structurer le code de manière professionnelle.
