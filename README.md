@@ -11,3 +11,18 @@ Un scanner de ports TCP **multithread** qui teste une liste de ports sur une IP 
 ### Usage
 ```bash
 python3 Python_reseau/scripts/test_port.py 127.0.0.1 22 80 443
+```
+
+## Feuille de route
+
+### Court terme
+- Amélioration du scanner TCP
+- Ajout de logs et gestion des erreurs avancée
+
+### Moyen terme
+- Développement d'outils réseau complémentaires
+- Scripts d’audit et d’automatisation Linux
+
+### Long terme
+- Mise en place d'une CI/CD
+- Conteneurisation avec Docker
